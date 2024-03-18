@@ -42,4 +42,3 @@ UPDATE "test_entities" SET "name"='33',"version"='2dfAIbPnnndKFEAjxbpqYX2lCeX' W
 ## Conclusion
 
 The `Version` struct is a powerful tool for handling nullable string fields in a database and for implementing optimistic concurrency control. By understanding and utilizing its features, you can greatly enhance the functionality and reliability of your Go project.
-```
