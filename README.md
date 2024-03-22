@@ -20,7 +20,7 @@ When creating a new record, the `Version` field will be automatically set.
 ```go
 e := TestEntity{
 	ID:   1,
-	Name: "1",
+	Name: "insert",
 }
 err := DB.Create(&e).Error
 ```
@@ -30,13 +30,13 @@ err := DB.Create(&e).Error
 When updating a record, the `Version` field will be updated automatically. If the `Version` field in the database does not match the `Version` field in the entity, the update will fail. This is known as optimistic concurrency control.
 
 ```go
-affected := DB.Model(&ec).Update("name", "3").RowsAffected
+affected := DB.Model(&ec).Update("name", "update").RowsAffected
 ```
 
 The generated SQL for the update operation will look like this:
 
 ```sql
-UPDATE "test_entities" SET "name"='33',"version"='2dfAIbPnnndKFEAjxbpqYX2lCeX' WHERE "test_entities"."version" = '2dfAIb22lmBQ8grpFNvALvUX1Cq' AND "id" = 3
+UPDATE "test_entities" SET "name"='update',"version"='2dfAIbPnnndKFEAjxbpqYX2lCeX' WHERE "test_entities"."version" = '2dfAIb22lmBQ8grpFNvALvUX1Cq' AND "id" = 1
 ```
 
 ## Conclusion
