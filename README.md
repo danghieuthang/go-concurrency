@@ -2,6 +2,12 @@
 
 The `Version` struct is a crucial component in our Go project. It leverages the GORM (Go Object-Relational Mapper) library for database operations and the `ksuid` library for generating unique identifiers. This guide will help you understand how to use the `Version` struct effectively in your project.
 
+## Package Installation
+
+```bash
+go get github.com/danghieuthang/go-concurrency
+````
+
 ## Adding the `Version` Type to Your Entity
 
 Firstly, you need to add the `Version` type to your entity. This field will be automatically set before creating a new record, or you can set it manually to prevent reflection.
