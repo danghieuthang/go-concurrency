@@ -30,7 +30,6 @@ _testmain.go
 .glide/
 
 # Go module files
-go.sum
 
 # IDE files
 .idea/
