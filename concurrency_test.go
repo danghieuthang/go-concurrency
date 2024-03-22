@@ -35,6 +35,13 @@ func init() {
 	if err != nil {
 		log.Printf("Error pinging test connection: %v", err)
 	}
+
+	// Drop all tables if they exist
+	if err := Db.Migrator().DropTable(&TestEntity{}); err != nil {
+		log.Printf("Error dropping tables: %v", err)
+	}
+
+	// Migrate the tables
 	Db.AutoMigrate(&TestEntity{})
 }
 
